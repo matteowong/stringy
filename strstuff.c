@@ -3,11 +3,10 @@
 #include <string.h>
 
 int mystrlen(char * s) {
-  int ret=-1;
-  while (s[ret++]){
-    //ret++;
+  int ret=0;
+  while (s[ret]){
+    ret++;
   }
-  //alternative: while (*s++); -> just relies on pointers
   return ret;
 }
 
