@@ -18,6 +18,13 @@ char * mystrcpy( char *dest, char *source ) {
   return dest;
 }
 
+char * mystrncpy( char *dest, char *source, int n ) {
+  int src_count=0;
+  while (src_count<n)
+    dest[src_count]=source[src_count++];
+  return dest;
+}
+
 char * mystrcat(char * dest,char * source) {
   int src_count=0;
   int dest_len=mystrlen(dest);
