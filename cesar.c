@@ -42,6 +42,32 @@ char * mystrchr(char *s, char c){
   return 0;
 }
 
+// strstr
+char * mystrstr(char *s1, char * s2){
+  char *output = mystrchr(s1, s2[0]);
+  if (output){
+    char *needleI = &s2[1];
+    char *haystackI = output;
+    haystackI++;
+    while (*needleI && *haystackI){
+      if (*haystackI != *needleI){
+        return 0;
+      }
+      haystackI++;
+      needleI++;
+    }
+    if (!*haystackI){
+      return 0;
+    }
+    else {
+      return output;
+    }
+  }
+  else {
+    return 0;
+  }
+}
+
 int main(){
   char *s1 = "ab";
   char *s2 = "abc";
@@ -61,9 +87,23 @@ int main(){
   printf("my value: %p\n", mystrchr(s1, c));
 
   printf("\n");
-  
+
   printf("Testing mystrchr(char *s, char c)\n");
   printf("s1 = [%s]  c = [%c]\n", s2, c);
   printf("default value: %p\n", strchr(s2, c));
   printf("my value: %p\n", mystrchr(s2, c));
+
+  printf("\n");
+  // testing mystrstr
+  printf("Testing mystrstr(char *s1, char * s2)\n");
+  printf("s1 = [%s]  s2 = [%s]\n", s2, s1);
+  printf("default value: %p\n", strstr(s2, s1));
+  printf("my value: %p\n", mystrstr(s2, s1));
+
+  printf("\n");
+
+  printf("Testing mystrstr(char *s1, char * s2)\n");
+  printf("s1 = [%s]  s2 = [%s]\n", s1, s2);
+  printf("default value: %p\n", strstr(s1, s2));
+  printf("my value: %p\n", mystrstr(s1, s2));
 }
