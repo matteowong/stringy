@@ -45,27 +45,28 @@ int main(){
   char arr[70]="aloha";
   char * s3=arr;
   char * s4="ciao";
+  
+  printf("Testing mystrcpy(char *s3, char * s4)\n");
+  printf("s3 = [%s]  s4 = [%s]\n", s3, s4);
+  printf("default value: %s\n", strcpy(s3, s4));
+  printf("my value: %s\n\n", mystrcpy(s3, s4));
+  
+  printf("Testing mystrncpy(char *s3, char * s4, int n)\n");
+  printf("s3 = [%s]  [%s]  n = 4\n", s3, "archipelago");
+  printf("default value: %s\n", strncpy(s3, "archipelago", 4));
+  printf("my value: %s\n\n", mystrncpy(s3, "archipelago", 4));
 
-  printf("s3: [%s]\ns4: [%s]\n",s3,s4);
-  printf("Testing strcpy(s3,s4)\n");
-  printf("strcpy: [%s]\n",strcpy(s3,s4));
-  printf("mystrcpy: [%s]\n\n",mystrcpy(s3,s4));
-
-  printf("s3: [%s]\ns4: [%s]\n",s3,s4);
-  printf("Testing strncpy(s3,\"archipelago\",4)\n");
-  printf("strncpy: [%s]\n",strncpy(s3,"archipelago",4));
-  printf("mystrncpy: [%s]\n\n",mystrncpy(s3,"archipelago",4));
-
-  printf("s3: [%s]\ns4: [%s]\n",s3,s4);
-  printf("Testing strcat(s3,s4)\n");
-  printf("strcat: [%s]\n",strcat(s3,s4));
+  printf("Testing mystrcat(char *s3, char * s4)\n");
+  printf("s3 = [%s]  s4 = [%s]\n", s3, s4);
+  printf("default value: %s\n", strcat(s3, s4));
   s3[8]=0;
-  printf("mystrcat: [%s]\n\n",mystrcat(s3,s4));
-
-  printf("s3: [%s]\ns4: [%s]\n",s3,s4);
-  printf("Testing strncat(s3,s4,3)\n");
-  printf("strncat: [%s]\n",strncat(s3,s4,3));
+  printf("my value: %s\n\n", mystrcat(s3, s4));
+  
+  printf("Testing mystrncat(char *s3, char * s4, int n)\n");
+  printf("s3 = [%s]  s4 = [%s]  n = 3\n", s3, s4);
+  printf("default value: %s\n", strncat(s3, s4, 3));
   s3[12]=0;
-  printf("mystrncat: [%s]\n\n",mystrncat(s3,s4,3));
+  printf("my value: %s\n\n", mystrncat(s3, s4, 3));
+
   return 0;
 }
