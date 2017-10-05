@@ -7,6 +7,12 @@ int main(){
   char *s1 = "ab";
   char *s2 = "abc";
   char c = 'c';
+  
+  // testing mystrlen
+  printf("Testing mystrlen(char *s1)\n");
+  printf("s1 = [%s]\n", s1);
+  printf("default value: %zd\n", strlen(s1));
+  printf("my value: %d\n\n", mystrlen(s1));
 
   // testing mystrcmp
   printf("Testing mystrcmp(char *s1, char *s2)\n");
@@ -14,12 +20,21 @@ int main(){
   printf("default value: %d\n", strcmp(s1, s2));
   printf("my value: %d\n\n", mystrcmp(s1, s2));
   
+  printf("Testing mystrcmp(char *s1, char *s2)\n");
+  printf("s1 = [%s]  s2 = [%s]\n", s2, s1);
+  printf("default value: %d\n", strcmp(s2, s1));
+  printf("my value: %d\n\n", mystrcmp(s2, s1));
+  
+  printf("Testing mystrcmp(char *s1, char *s2)\n");
+  printf("s1 = [%s]  s2 = [%s]\n", s1, s1);
+  printf("default value: %d\n", strcmp(s1, s1));
+  printf("my value: %d\n\n", mystrcmp(s1, s1));
+  
   // testing mystrchr
   printf("Testing mystrchr(char *s, char c)\n");
   printf("s1 = [%s]  c = [%c]\n", s1, c);
   printf("default value: %p\n", strchr(s1, c));
   printf("my value: %p\n\n", mystrchr(s1, c));
-
 
   printf("Testing mystrchr(char *s, char c)\n");
   printf("s1 = [%s]  c = [%c]\n", s2, c);
